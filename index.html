@@ -46,7 +46,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Policy Decorator: Model-Agnostic Online Refinement for Large Policy Model</h1>
+          <h1 class="title is-1 publication-title">Policy Decorator: <span style="color: #4da2e4;">Model-Agnostic Online Refinement</span> for Large Policy Model</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="index.html">Xiu Yuan</a><sup>1*</sup>,</span>
@@ -134,18 +134,22 @@
   </div>
 </section>
 
-<!-- Paper video. -->
+<hr>
+
 <section class="section">
-<div class="columns is-centered has-text-centered">
-  <div class="column is-four-fifths">
-    <h2 class="title is-3">Video</h2>
-    <div class="publication-video">
-      <iframe src="https://drive.google.com/file/d/16vy0HmYEyTKQ9XUYOrswlYqmZqJKBRMM/preview"
-              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <h2 class="title is-3" style="text-align: center;">Video</h2>
+      <div class="card">
+        <div class="card-content">
+          <iframe src="https://drive.google.com/file/d/16vy0HmYEyTKQ9XUYOrswlYqmZqJKBRMM/preview" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen width="100%" height="400"></iframe>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </section>
+
+<hr>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -161,76 +165,79 @@
   </div>
 </section>
 
+<hr>
+
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
+    <!-- Abstract -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Combines Advantages of Base Policy and Online Learning</h2>
-        <div class="content has-text-justified">
-          An intriguing property of Policy Decorator is its ability to combine the advantages of the base policy and online learning.
+        <div class="card">
+          <div class="card-content">
+            <h2 class="title is-3">Combines Advantages of Base Policy and Online Learning</h2>
+            <div class="content has-text-justified">
+              An intriguing property of Policy Decorator is its ability to combine the advantages of the base policy and online learning.
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
   <div class="container is-max-desktop">
-
     <div class="columns is-centered">
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h5 class="title is-5">Base Policy (w/o Online Learning)</h5>
-          <p>
-            The offline-trained base policies can reproduce the natural and smooth motions recorded in demonstrations but may have suboptimal performance.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/peg_base.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
 
-      <!-- Matting. -->
-      <div class="column">
-        <h5 class="title is-5">Ours (Base Policy + Online Residual)</h5>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              Policy Decorator (ours) achieves remarkably high success rates while preserving the favorable attributes of the base policy.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/peg_ours.mp4"
-                      type="video/mp4">
-            </video>
+      <!-- Base Policy -->
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <h5 class="title is-5">Base Policy (w/o Online Learning)</h5>
+            <p>The offline-trained base policies can reproduce the natural and smooth motions recorded in demonstrations but may have suboptimal performance.</p>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline height="300px">
+                <source src="./static/videos/peg_base.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
-
         </div>
       </div>
 
-      <div class="column">
-        <h5 class="title is-5">Online RL Policy (w/o Base Policy)</h5>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              Policies solely learned by RL, though achieving good success rates, often exhibit jerky actions, rendering them unsuitable for real-world applications.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/peg_rl.mp4"
-                      type="video/mp4">
-            </video>
+      <!-- Ours (Base Policy + Online Residual) -->
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <h5 class="title is-5">Ours (Base Policy + Online Residual)</h5>
+            <p>Policy Decorator (ours) not only achieves remarkably high success rates but also preserves the favorable attributes of the base policy.</p>
+            <div class="video-container">
+              <video controls playsinline height="300px">
+                <source src="./static/videos/peg_ours.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
-  
+        </div>
+      </div>
+
+      <!-- Online RL Policy -->
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <h5 class="title is-5">Online RL Policy (w/o Base Policy)</h5>
+            <p>Policies solely learned by RL, though achieving good success rates, often exhibit jerky actions, rendering them unsuitable for real-world applications.</p>
+            <div class="video-container">
+              <video controls playsinline height="300px">
+                <source src="./static/videos/peg_rl.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
-    <!--/ Matting. -->
-
   </div>
 
-  </div>
 </section>
+
+<hr>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -241,16 +248,17 @@
         <div class="content has-text-justified">
           Our framework, Policy Decorator, improves various state-of-the-art policy models, such as Behavior Transformer and Diffusion Policy, boosting their success rates to nearly 100% on challenging robotic tasks. It also significantly outperforms top-performing baselines from both finetuning and non-finetuning method families.
         </div>
-        <div class="content has-text-justified">
+        <div class="content" style="text-align: center;">
           <img src="./static/images/bar_all.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-        </div>
+               class="interpolation-image"
+               alt="Interpolate start reference image." width="600" height="400"/>
+        </div>        
       </div>
     </div>
   </div>
 </section>
 
+<hr>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -286,17 +294,26 @@ Controlled exploration (Progressive Exploration Schedule + Bounded Residual Acti
 
 
 <footer class="footer">
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <div class="content" style="text-align: center;">
-            <h2 class="title is-3">Website based on <a href="https://nerfies.github.io">Nerfies</a></h2>
-          </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>Website based on <a href="https://nerfies.github.io">Nerfies</a></p>
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="index.html">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </footer>
 
 
