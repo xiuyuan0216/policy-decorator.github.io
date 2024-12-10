@@ -49,7 +49,7 @@
               <h2 class="title is-3 has-text-centered">Policy Decorator (Ours) vs. Base Policy</h2>
               <div class="content has-text-justified">
                 <p>
-                  Our refined policy, learned through Policy Decorator, achieves remarkably high success rates while retaining the favorable attributes of the original base policy. On this page, we compare our refined policy against the base policy (specifically, Diffusion Policy) to demonstrate how our refined policy effortlessly navigates through the most challenging parts of the task, where the base policy falls short.
+                  Our refined policy, learned through Policy Decorator, achieves high success rates while retaining the base policy's strengths. We compare it to the base Diffusion Policy to show how our refined policy navigates the task's hardest parts, where the base policy struggles.
                 </p>
               </div>
             </div>
@@ -64,7 +64,7 @@
                   <h5 class="title is-5 has-text-centered">Key Observations</h5>
                   <div class="content has-text-justified">
                     <p>
-                      As shown in the videos below, we found that in challenging tasks requiring precise control, the offline-trained base policy often fails to navigate through the finest parts of the task. In contrast, Policy Decorator successfully refines the base policy in these critical parts while remaining closely aligned with the base policy overall. To emphasize the difference, we slow down the video at the finest parts of the task, highlight the specific region with a red box, and visualize how Policy Decorator improves the base policy's precision and control.
+                      In challenging tasks requiring precise control, the offline-trained base policy often fails in critical areas. In contrast, Policy Decorator refines the base policy in these areas while staying aligned overall. We highlight these improvements by slowing down the video, marking the critical regions, and showing how Policy Decorator enhances precision and control.
                     </p>
                   </div>
                 </div>
@@ -81,9 +81,8 @@
                   <h5 class="title is-5 has-text-centered">Peg Insertion Task</h5>
                   <div class="content has-text-justified">
                     <p>
-                      The Peg Insertion task requires highly precise manipulation, with the hole having only 3mm of clearance. It requires at least half of the peg to be pushed sideways into the hole, making it more challenging than similar tasks [1]. The base policy manages to transport the peg near the hole but fails to align it correctly, resulting in unsuccessful insertion. In contrast, our refined policy learned by Policy Decorator accurately inserts the peg into the hole while maintaining smooth motion.
+                      The Peg Insertion task requires precise manipulation with only 3mm of clearance. The base policy can bring the peg near the hole but fails to align it for insertion. In contrast, our refined Policy Decorator policy accurately inserts the peg while maintaining smooth motion.
                     </p>
-                    <p>[1] Jing Xu, Zhimin Hou, Zhi Liu, and Hong Qiao. Compare contact model-based control and contact model-free learning: A survey of robotic peg-in-hole assembly strategies. arXiv preprint arXiv:1904.05240, 2019.</p>
                   </div>
                   <div class="content has-text-centered">
                     <!-- Center-align iframe -->
@@ -103,7 +102,7 @@
                   <h5 class="title is-5 has-text-centered">Turn Faucet Task</h5>
                   <div class="content has-text-justified">
                     <p>
-                      In the Turn Faucet task, the base policy's behavior appears promising and nearly completes the task. However, the gripper narrowly misses the faucet handle, resulting in failure. In contrast, Policy Decorator corrects the base policy's behavior during the handle-turning phase, ensuring that the gripper successfully touches the faucet handle while leaving other parts of the trajectory roughly unchanged.
+                      In the Turn Faucet task, the base policy nearly completes the task but misses the faucet handle. In contrast, Policy Decorator refines the handle-turning phase, ensuring successful contact while leaving the rest of the trajectory unchanged.
                     </p>
                   </div>
                   <div class="content has-text-centered">
