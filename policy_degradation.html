@@ -45,19 +45,16 @@
           <!-- Policy Degradation Section (Title and Intro Text) -->
           <div class="columns is-centered">
             <div class="column is-three-quarters">
-              <div class="card">
-                <div class="card-content">
-                  <!-- Center-aligned Title -->
-                  <h2 class="title is-3 has-text-centered">Policy Degradation</h2>
-                  <!-- Left-aligned Text -->
-                  <div class="content">
-                    <p>This page presents illustrative experiments demonstrating how updating the base policy with a randomly initialized critic function Q(s, a) results in significant deviations from its original trajectory.</p>
-                    <p>In summary, these experiments suggest that fine-tuning the base policy with a randomly initialized critic can lead to unlearning. Once unlearning occurs, it becomes very hard to relearn the policy since it cannot get the sparse reward signal anymore.</p>
-                  </div>
+              <section>
+                <!-- Center-aligned Title -->
+                <h2 class="title is-3 has-text-centered">Policy Degradation</h2>
+                <!-- Left-aligned Text -->
+                <div class="content">
+                  <p>This page shows experiments demonstrating how updating the base policy with a randomly initialized critic causes significant deviations and unlearning. Once unlearning occurs, relearning becomes difficult due to the loss of the sparse reward signal.</p>
                 </div>
-              </div>
+              </section>
             </div>
-          </div>
+          </div>          
       
           <!-- Updates Section -->
           <div class="columns is-centered">
