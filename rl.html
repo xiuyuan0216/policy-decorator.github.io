@@ -38,39 +38,99 @@
     <script src="./static/js/bulma-carousel.min.js"></script>
     <script src="./static/js/bulma-slider.min.js"></script>
     <script src="./static/js/index.js"></script>
+
+    <style>
+        /* Card Styles */
+.card {
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Video Container */
+  .card iframe {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Heading Colors */
+  /* Additional Text Styling */
+  .content p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+    </style>
 </head>
 <body>
-    <section class="section">
+
+      <section class="section">
         <div class="container is-max-desktop">
-          <!-- Abstract. -->
+          <!-- Policy Decorator vs. RL (First Block Without Card) -->
           <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-              <h2 class="title is-3">Policy Decorator (Ours) vs. RL</h2>
-              <div class="content has-text-justified">
-                Our refined policy, learned through Policy Decorator, achieves remarkably high success rates while retaining the favorable attributes of the original base policy. On this page, we compare our refined policy against a policy directly learned by RL to demonstrate how our refined policy exhibits significantly smoother and more natural behavior. Given that SAC with sparse rewards cannot solve most of the tasks we tested, we instead employ RLPD (a state-of-the-art RL method that uses demonstrations to boost learning) to train policies and produce visualizations.
-              </div>
-      
-              <div class="content has-text-justified">
-                <h5>Key Observations</h5>
-                <p>As shown in the videos below, RL policies exhibit noisy and jerky motions. This is because they are trained solely to achieve the goal (sparse reward) without explicit constraints on the motions. As studied in [2], the jerky actions produced by an RL policy often fail to transfer to the real world. </p>
-                <p>In contrast, our refined policies exhibit smooth and natural behavior by staying close to the base policy. This is achieved through the bounded residual action strategy. Since the base policies are trained on demonstrations with smooth and natural behaviors (usually from human teleoperation or motion planning), our refined policies inherit the favorable attributes of the original base policy.</p>
-                <p>[2] Yuzhe Qin, Hao Su, and Xiaolong Wang. From one hand to multiple hands: Imitation learning for dexterous manipulation from single-camera teleoperation. IEEE Robotics and Automation Letters, 7(4):10873–10881, 2022.</p>
-              </div>
-              <iframe src="https://drive.google.com/file/d/1AQawAHdlZzh6f5pEt4tLMSYwBmz7VHON/preview"
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen width="600" height="400"></iframe>
-              <div class="content has-text-justified">
-                <p>The Peg Insertion task requires highly precise manipulation, with the hole having only 3mm of clearance. It requires at least half of the peg to be pushed sideways into the hole, making it more challenging than similar tasks [1]. The RL policy exhibits jerky motions when attempting to insert the peg into the hole, posing a high risk of causing damage to objects when transferred from simulation to the real world. In contrast, our refined policy from Policy Decorator demonstrates smooth motions throughout the entire trajectory, eliminating the risk of damaging the peg or the box.</p>
-                <p>[1] Jing Xu, Zhimin Hou, Zhi Liu, and Hong Qiao. Compare contact model-based control and contact model-free learning: A survey of robotic peg-in-hole assembly strategies. arXiv preprint arXiv:1904.05240, 2019.</p>
-              </div>
-              <iframe src="https://drive.google.com/file/d/1s2DJYJUMOM3EJzQJ0kpachI9ZmOnyssl/preview"
-              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen width="600" height="400"></iframe>
-              <div class="content has-text-justified">
-                In the Turn Faucet task, the RL policy displays erratic behavior when the gripper approaches the faucet, resulting in collisions with both the ground and the faucet itself. This behavior poses significant risks and challenges for sim-to-real transfer due to the collisions. In contrast, our refined policy from Policy Decorator demonstrates remarkably smooth motions, avoiding unnecessary collisions with both the ground and the faucet.
+              <!-- Title and Introductory Text Without Card -->
+              <h2 class="title is-3 text-darker-blue">Policy Decorator (Ours) vs. RL</h2>
+              <div class="content text-darker-blue">
+                <p>
+                  Our refined policy, learned through Policy Decorator, achieves remarkably high success rates while retaining the favorable attributes of the original base policy. On this page, we compare our refined policy against a policy directly learned by RL to demonstrate how our refined policy exhibits significantly smoother and more natural behavior. Given that SAC with sparse rewards cannot solve most of the tasks we tested, we instead employ RLPD (a state-of-the-art RL method that uses demonstrations to boost learning) to train policies and produce visualizations.
+                </p>
               </div>
             </div>
           </div>
+      
+          <!-- Key Observations Card -->
+          <div class="card">
+            <div class="card-content">
+              <h5 class="title is-5 text-darker-blue">Key Observations</h5>
+              <div class="content text-darker-blue">
+                <p>
+                  As shown in the videos below, RL policies exhibit noisy and jerky motions. This is because they are trained solely to achieve the goal (sparse reward) without explicit constraints on the motions. As studied in [2], the jerky actions produced by an RL policy often fail to transfer to the real world.
+                </p>
+                <p>
+                  In contrast, our refined policies exhibit smooth and natural behavior by staying close to the base policy. This is achieved through the bounded residual action strategy. Since the base policies are trained on demonstrations with smooth and natural behaviors (usually from human teleoperation or motion planning), our refined policies inherit the favorable attributes of the original base policy.
+                </p>
+                <p>[2] Yuzhe Qin, Hao Su, and Xiaolong Wang. From one hand to multiple hands: Imitation learning for dexterous manipulation from single-camera teleoperation. IEEE Robotics and Automation Letters, 7(4):10873–10881, 2022.</p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- First Video Card (Peg Insertion Task) -->
+          <div class="card">
+            <div class="card-content">
+              <h5 class="title is-5 text-darker-blue">Peg Insertion Task</h5>
+              <div class="content text-darker-blue">
+                <p>
+                  The Peg Insertion task requires highly precise manipulation, with the hole having only 3mm of clearance. It requires at least half of the peg to be pushed sideways into the hole, making it more challenging than similar tasks [1]. The RL policy exhibits jerky motions when attempting to insert the peg into the hole, posing a high risk of causing damage to objects when transferred from simulation to the real world. In contrast, our refined policy from Policy Decorator demonstrates smooth motions throughout the entire trajectory, eliminating the risk of damaging the peg or the box.
+                </p>
+                <p>[1] Jing Xu, Zhimin Hou, Zhi Liu, and Hong Qiao. Compare contact model-based control and contact model-free learning: A survey of robotic peg-in-hole assembly strategies. arXiv preprint arXiv:1904.05240, 2019.</p>
+              </div>
+              <div class="content">
+                <iframe src="https://drive.google.com/file/d/1AQawAHdlZzh6f5pEt4tLMSYwBmz7VHON/preview" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen width="600" height="400"></iframe>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Second Video Card (Turn Faucet Task) -->
+          <div class="card">
+            <div class="card-content">
+              <h5 class="title is-5 text-darker-blue">Turn Faucet Task</h5>
+              <div class="content text-darker-blue">
+                <p>
+                  In the Turn Faucet task, the RL policy displays erratic behavior when the gripper approaches the faucet, resulting in collisions with both the ground and the faucet itself. This behavior poses significant risks and challenges for sim-to-real transfer due to the collisions. In contrast, our refined policy from Policy Decorator demonstrates remarkably smooth motions, avoiding unnecessary collisions with both the ground and the faucet.
+                </p>
+              </div>
+              <div class="content">
+                <iframe src="https://drive.google.com/file/d/1s2DJYJUMOM3EJzQJ0kpachI9ZmOnyssl/preview" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen width="600" height="400"></iframe>
+              </div>
+            </div>
+          </div>
+      
         </div>
       </section>
+      
 </body>
 
 </html>
