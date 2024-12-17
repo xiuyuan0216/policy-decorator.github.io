@@ -59,11 +59,26 @@
   
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
-            Home
+            More Visualizations
           </a>
           <div class="navbar-dropdown">
             <a class="navbar-item" href="index.html">
               Home
+            </a>
+            <a class="navbar-item" href="base_policy.html">
+              Comparison with Base Policy
+            </a>
+            <a class="navbar-item" href="rl.html">
+              Comparison with RL
+            </a>
+            <a class="navbar-item" href="jsrl.html">
+              Comparison with JSRL
+            </a>
+            <a class="navbar-item" href="policy_degradation.html">
+              Policy Degradation
+            </a>
+            <a class="navbar-item" href="random_residual_actions.html">
+              Random Residual Actions
             </a>
           </div>
         </div>
@@ -71,7 +86,7 @@
   
     </div>
   </nav>
-  
+
     <section class="section">
         <div class="container is-max-desktop">
           <!-- Policy Degradation Section (Title and Intro Text) -->
@@ -81,7 +96,7 @@
                 <!-- Center-aligned Title -->
                 <h2 class="title is-3 has-text-centered">Policy Degradation</h2>
                 <!-- Left-aligned Text -->
-                <div class="content">
+                <div class="content has-text-justified">
                   <p>This page shows experiments demonstrating how updating the base policy with a randomly initialized critic causes significant deviations and unlearning. Once unlearning occurs, relearning becomes difficult due to the loss of the sparse reward signal.</p>
                 </div>
               </section>
@@ -96,7 +111,7 @@
                 <div class="card-content">
                   <!-- Center-aligned Title -->
                   <h5 class="title is-5 has-text-centered">0 Update</h5>
-                  <div class="content">
+                  <div class="content has-text-justified">
                     <p>
                       In the StackCube task, a robot arm must pick up a red cube and stack it on a green cube. Initially, a pre-trained base policy successfully grasps the red cube and accurately places it on the green cube.
                     </p>
@@ -116,7 +131,7 @@
                 <div class="card-content">
                   <!-- Center-aligned Title -->
                   <h5 class="title is-5 has-text-centered">100 Update</h5>
-                  <div class="content">
+                  <div class="content has-text-justified">
                     <p>
                       After fine-tuning the base policy with a randomly initialized critic for 100 gradient steps, it begins to slightly deviate from the original trajectory. It can still grasp the red cube but fails to place it on the green cube.
                     </p>
@@ -136,7 +151,7 @@
                 <div class="card-content">
                   <!-- Center-aligned Title -->
                   <h5 class="title is-5 has-text-centered">200 Update</h5>
-                  <div class="content">
+                  <div class="content has-text-justified">
                     <p>
                       Following an additional 100 gradient updates (200 total), the base policy deviates further from the original trajectory. As a result, it fails to effectively grasp the red cube, marking a significant decline in its performance.
                     </p>
